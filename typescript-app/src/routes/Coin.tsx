@@ -134,7 +134,7 @@ function Coin() {
   const { state } = useLocation() as Istate;
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chart");
-  const { isLoading: priceLoading, data: price } = useQuery<IpriceData>(
+  const { isLoading: priceLoading, data: pricedata } = useQuery<IpriceData>(
     ["price", coinId],
     () => fetchCoinPrice(coinId)
   );
@@ -173,18 +173,18 @@ function Coin() {
             </OverviewItem>
             <OverviewItem>
               <span>Price:</span>
-              <span>{price?.quotes.USD.price.toFixed(3)}</span>
+              <span>{pricedata?.quotes?.USD?.price.toFixed(3)}</span>
             </OverviewItem>
           </Overview>
           <Description>{info?.description}</Description>
           <Overview>
             <OverviewItem>
               <span>Total suply :</span>
-              <span>{price?.total_supply}</span>
+              <span>{pricedata?.total_supply}</span>
             </OverviewItem>
             <OverviewItem>
               <span>Max suply :</span>
-              <span>{price?.max_supply}</span>
+              <span>{pricedata?.max_supply}</span>
             </OverviewItem>
           </Overview>
           <Tabs>
