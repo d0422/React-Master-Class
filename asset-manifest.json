@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/React-Master-Class/static/js/main.efc169cc.js",
+    "main.js": "/React-Master-Class/static/js/main.a2ee1135.js",
     "static/js/787.fda8e7a5.chunk.js": "/React-Master-Class/static/js/787.fda8e7a5.chunk.js",
     "index.html": "/React-Master-Class/index.html",
-    "main.efc169cc.js.map": "/React-Master-Class/static/js/main.efc169cc.js.map",
+    "main.a2ee1135.js.map": "/React-Master-Class/static/js/main.a2ee1135.js.map",
     "787.fda8e7a5.chunk.js.map": "/React-Master-Class/static/js/787.fda8e7a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.efc169cc.js"
+    "static/js/main.a2ee1135.js"
   ]
 }
