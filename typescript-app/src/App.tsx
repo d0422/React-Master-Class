@@ -73,14 +73,15 @@ const Btn = styled.div`
 `;
 function App() {
   const [isdark, setDark] = useState(true);
+  const toggleDark = () => {
+    setDark((prev) => !prev);
+  };
+
   return (
     <>
       <ThemeProvider theme={isdark ? theme : darktheme}>
-        <Btn onClick={() => setDark((prev) => !prev)}>
-          {isdark ? "🤍" : "🖤"}
-        </Btn>
         <Style />
-        <Routers></Routers>
+        <Routers toggleDark={toggleDark} isDark={isdark}></Routers>
       </ThemeProvider>
     </>
   );
