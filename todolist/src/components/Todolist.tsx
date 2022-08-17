@@ -13,7 +13,7 @@ const Todolist = () => {
       <CreateToDo></CreateToDo>
       <ul>
         {toDos.map((toDo) => (
-          <Todo {...toDo} />
+          <Todo key={toDo.id} {...toDo} />
         ))}
       </ul>
     </div>
