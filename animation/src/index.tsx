@@ -65,6 +65,7 @@ body {
   color:black;
   line-height: 1.2;
   background:linear-gradient(90deg,rgb(153,175,255),rgb(168,204,255));
+  
 }
 a {
   text-decoration:none;
