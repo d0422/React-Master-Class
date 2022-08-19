@@ -11,7 +11,7 @@ import {
   Overlay,
 } from "../Styled";
 import styled from "styled-components";
-import { AnimatePresence } from "framer-motion";
+import { addScaleCorrector, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 const boxVariants = {
   initial: {
