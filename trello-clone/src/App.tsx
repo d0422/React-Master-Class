@@ -1,32 +1,31 @@
 import React from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { hourSelector, minuteState } from "./atoms";
 import { Draggable, DragDropContext, Droppable } from "@hello-pangea/dnd";
+import styled from "styled-components";
+const Ul = styled.ul`
+  font-size: 30px;
+`;
 function App() {
-  const [minute, setMinute] = useRecoilState(minuteState);
-  const [hour, setHour] = useRecoilState(hourSelector);
-  const 분바꾸기 = (event: React.FormEvent<HTMLInputElement>) => {
-    setMinute(+event.currentTarget.value);
-  };
-  const 시간바꾸기 = (event: React.FormEvent<HTMLInputElement>) => {
-    setHour(+event.currentTarget.value);
-  };
-
+  const onDragEnd = () => {};
   return (
-    <>
-      <input
-        type="number"
-        value={minute}
-        onChange={분바꾸기}
-        placeholder="Minutes"
-      ></input>
-      <input
-        type="number"
-        placeholder="Time"
-        value={hour}
-        onChange={시간바꾸기}
-      ></input>
-    </>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Droppable droppableId="one">
+        {(magic) => (
+          <Ul ref={magic.innerRef} {...magic.droppableProps}>
+            <Draggable draggableId="first" index={0}>
+              {(magic) => (
+                <li
+                  ref={magic.innerRef}
+                  {...magic.draggableProps}
+                  {...magic.dragHandleProps}
+                >
+                  One
+                </li>
+              )}
+            </Draggable>
+          </Ul>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 }
 
